@@ -36,23 +36,25 @@ class ProductManager {
     }
 }
 
-  // Crear una instancia de ProductManager
+
     const productManager = new ProductManager();
 
   // Ejemplo de cómo agregar un producto
-    productManager.addProduct({
-        title: "Producto 1",
-        description: "Descripción del producto 1",
-        price: 100,
-        thumbnail: "https://example.com/product1.jpg",
-        code: "ABC123",
-        stock: 10
-    });
+//     productManager.addProduct({
+//         title: "Producto 1",
+//         description: "Descripción del producto 1",
+//         price: 100,
+//         thumbnail: "https://example.com/product1.jpg",
+//         code: "ABC123",
+//         stock: 10
+//     });
 
-  // Ejemplo de cómo obtener todos los productos
-    const allProducts = productManager.getProducts();
-    console.log(allProducts);
+   // Ejemplo de cómo obtener todos los productos
+
+//     const allProducts = productManager.getProducts();
+//     console.log(allProducts);
 
   // Ejemplo de cómo obtener un producto por su id
-  const productById = productManager.getProductById(1); // Cambiar el 1 por el id deseado
-    console.log(productById);
+
+//   const productById = productManager.getProductById(1); // Cambiar el 1 por el id deseado
+//     console.log(productById);
