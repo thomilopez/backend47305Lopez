@@ -1,14 +1,15 @@
 const express = require('express');
-const ProductManager = require('./pesistence/ProductManager');
+const ProductManager = require('./persistence/ProductManager.js');
 
 
 const app = express();
-const productManager = new ProductManager("./src/files/product.json");
+const productManager = new ProductManager("E:/Backend/entrega1/servidor-express/src/files/products.json");
 
-app.get("/product", async (req, res) => {
+app.get("/products", async (req, res) => {
+
     try {
         const limit = parseInt(req.query.limit);
-        const products = await ProductManager.getProducts();
+        const products = await productManager.getProducts();
 
     if (limit) {
         const limitedProducts = products.slice(0, limit);

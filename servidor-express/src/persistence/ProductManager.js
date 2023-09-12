@@ -21,6 +21,7 @@ class ProductManager {
   async getProducts() {
     try {
       const data = await fs.readFile(this.path);
+
       return JSON.parse(data);
     } catch (error) {
       if (error.code === 'ENOENT') {
