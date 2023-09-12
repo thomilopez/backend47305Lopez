@@ -1,12 +1,15 @@
 {
   "name": "entrega1",
   "version": "1.0.0",
-  "description": "",
   "main": "ejercicio1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
