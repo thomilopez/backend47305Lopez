@@ -36,7 +36,7 @@ class ProductManager {
     try {
       const productos = await this.getProducts();
       const producto = productos.find((p) => p.id === id);
-      console.log('Producto encontrado:', producto);
+      return producto;
     } catch (error) {
       console.error('Error al buscar el producto por ID:', error);
     }

@@ -3,7 +3,7 @@ const ProductManager = require('./persistence/ProductManager.js');
 
 
 const app = express();
-const productManager = new ProductManager("E:/Backend/entrega1/servidor-express/src/files/products.json");
+const productManager = new ProductManager("./servidor-express/src/files/products.json");
 
 app.get("/products", async (req, res) => {
 
@@ -39,5 +39,6 @@ app.get("/products/:pid", async (req, res) => {
 
 const port = 8080;
 app.listen(port, () => console.log(`Servidor en funcionamiento en el puerto ${port}`));
+
 
 
