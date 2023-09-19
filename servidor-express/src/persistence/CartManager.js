@@ -1,5 +1,7 @@
 // const fs = require('fs').promises;
-import { fs } from 'fs/promises';
+// import { fs } from 'fs/promises';
+import fs from 'fs';
+
 
 class CartManager {
     constructor(path) {
@@ -72,4 +74,4 @@ async getCarts() {
 }
 }
 
-module.exports = CartManager;
+export default CartManager;
