@@ -1,6 +1,6 @@
-const express = require('express');
+import { express } from 'express';
 const productRouter = express.Router();
-const ProductManager = require('./persistence/ProductManager.js');
+import ProductManager from './persistence/ProductManager.js';
 const productManager = new ProductManager("./servidor-express/src/files/products.json");
 
 productRouter.get("/", async (req, res) => {

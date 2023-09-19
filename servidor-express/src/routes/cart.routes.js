@@ -1,7 +1,6 @@
-const express = require('express');
+import { express } from 'express';
 const cartRouter = express.Router();
-
-const CartManager = require('./persistence/CartManager.js');
+import CartManager from './persistence/CartManager.js';
 const cartManager = new CartManager("./servidor-express/src/files/carts.json");
 
 cartRouter.post("/", async (req, res) => {

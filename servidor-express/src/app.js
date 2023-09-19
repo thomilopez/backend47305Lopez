@@ -1,4 +1,4 @@
-const express = require('express');
+import { express } from 'express';
 import { productRouter } from './routes/products.routes.js';
 import { cartRouter } from './routes/cart.routes.js';
 
