@@ -1,5 +1,7 @@
 // const fs = require('fs').promises;
 import fs from 'fs';
+import {promises as fs} from 'fs';
+
 
 class ProductManager {
   constructor(path) {

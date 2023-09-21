@@ -1,7 +1,7 @@
 // const fs = require('fs').promises;
 // import { fs } from 'fs/promises';
 import fs from 'fs';
-
+import {promises as fs} from 'fs';
 
 class CartManager {
     constructor(path) {
