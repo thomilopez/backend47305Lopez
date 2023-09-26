@@ -2,6 +2,18 @@ import express from 'express';
 const productRouter = express.Router();
 import ProductManager from '../persistence/ProductManager.js';
 const productManager = new ProductManager("./servidor-express/src/files/products.json");
+import multer from 'multer';
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  });
+
+const upload = multer({ storage: storage });
 
 productRouter.get("/", async (req, res) => {
     try {
@@ -34,7 +46,7 @@ productRouter.get("/:pid", async (req, res) => {
     }
 });
 
-productRouter.post("/", async (req, res) => {
+productRouter.post("/", upload.single('file'), async (req, res) => {
     try {
         const { title, description, code, price, stock, category, thumbnails } = req.body;
         const product = {
@@ -45,7 +57,8 @@ productRouter.post("/", async (req, res) => {
             status: true,
             stock,
             category,
-            thumbnails
+            thumbnails,
+            file: req.file.filename
         };
 
     await productManager.addProduct(product);

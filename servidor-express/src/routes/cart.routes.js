@@ -1,9 +1,14 @@
 import express from 'express';
 const cartRouter = express.Router();
-import CartManager from '../persistence/CartManager';
+import CartManager from '../persistence/CartManager.js';
 const cartManager = new CartManager("./servidor-express/src/files/carts.json");
 
+const myMiddleware = (req, res, next) => {
+    console.log('Middleware ejecutado');
+    next();
+};
 
+cartRouter.use(myMiddleware);
 
 cartRouter.post("/", async (req, res) => {
     try {
