@@ -1,6 +1,6 @@
 import express from 'express';
 const productRouter = express.Router();
-import ProductManager from './persistence/ProductManager.js';
+import ProductManager from '../persistence/ProductManager.js';
 const productManager = new ProductManager("./servidor-express/src/files/products.json");
 
 productRouter.get("/", async (req, res) => {
@@ -78,5 +78,5 @@ productRouter.delete("/:pid", async (req, res) => {
     }
 });
 
-
 export {productRouter};
+// export default productRouter;

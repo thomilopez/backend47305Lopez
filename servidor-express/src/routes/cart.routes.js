@@ -1,6 +1,6 @@
 import express from 'express';
 const cartRouter = express.Router();
-import CartManager from './persistence/CartManager.js';
+import CartManager from '../persistence/CartManager';
 const cartManager = new CartManager("./servidor-express/src/files/carts.json");
 
 
@@ -41,4 +41,5 @@ cartRouter.post("/:cid/product/:pid", async (req, res) => {
 });
 
 
+// export default cartRouter;
 export {cartRouter};
