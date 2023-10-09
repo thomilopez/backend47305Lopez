@@ -1,6 +1,6 @@
 import express from 'express';
 const productRouter = express.Router();
-import ProductManager from '../persistence/ProductManager.js';
+import ProductManager from '../persistence/files/ProductManager.js';
 const productManager = new ProductManager("./servidor-express/src/files/products.json");
 import multer from 'multer';
 

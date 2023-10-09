@@ -1,6 +1,6 @@
 import express from 'express';
 const cartRouter = express.Router();
-import CartManager from '../persistence/CartManager.js';
+import CartManager from '../persistence/files/CartManager.js';
 const cartManager = new CartManager("./servidor-express/src/files/carts.json");
 
 const myMiddleware = (req, res, next) => {
